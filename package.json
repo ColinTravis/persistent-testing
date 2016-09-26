@@ -1,0 +1,19 @@
+{
+  "name": "persistent-testing",
+  "version": "1.0.0",
+  "description": "First time Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColinTravis/persistent-testing.git"
+  },
+  "author": "Colin Travis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ColinTravis/persistent-testing/issues"
+  },
+  "homepage": "https://github.com/ColinTravis/persistent-testing#readme"
+}
