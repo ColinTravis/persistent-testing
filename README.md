@@ -34,19 +34,6 @@ Use npm to install. (Can search npmjs.com for any packages)
 
 npm --save (adds line to json file) install express
 
-## ===== SETTING UP SERVER =====
-Require express
-var app = require('express')();
-
-Require Server (Node function)
-var server = require('http').Server( app )
-
-
-Tell Server to start listening to port 3000, and log it out to confirm
-server.listen(3000, function(){
-  console.log("server started on 3000");
-})
-
 
 ====
 
@@ -54,59 +41,6 @@ Install socket.io - realtime engine.
 
 Socket.io CDN needs to be added to any client-side file.
 
-
-=====
-
-### index.html =
-<button type="button" name="button">Click it.</button>
-
-=====
-
-### app.js =
-
-io.on('connect', function(socket){ //turn on socket on connect
-
-  socket.on('addRectangle', function(data){
-    console.log("addRectangle" + " " + data)
-    io.emit('projectionRectangle', true) //If socket receives "addrectangle" then send "projectionRectangle"
-  })
-
-})
-
-=====
-
-### projections.html =
-
-<script type="text/javascript">
-  //io.connect from socket.io API
-  var socket = io.connect('http://localhost:3000')
-
-
-  $('button').click(function(){
-    socket.emit('addRectangle', true)
-  //add rectangle, true on click
-
-  })
-
-  socket.on('projectionRectangle', function(data){
-    console.log("made it to projection.html" + data); //whenever projection message comes in, do something with it
-
-    var h = window.innerHeight; //learn the size of the screen
-    var w = window.innerWidth;
-
-//make html and css before appending it to screen.
-$('<div></div>').css({ //make a div. Append CSS to it.
-  'position':'absolute',
-  'top' :Math.random() * h,
-  'left' : Math.random() * w,
-  'width' : Math.random()* 500,
-  'height' : Math.random()* 500,
-  'border' : '1px solid cyan'
-  }).appendTo('body') //attaches it to body. (it is created before being placed)
-
-  })
-
-</script>
 
 
 ======= WHAT THIS MEANS =======

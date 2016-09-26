@@ -14,19 +14,14 @@
       <h1>This had better be projected</h1>
     </div>
   </body>
+   <!-- include socket.io so we can connect to our server with a websocket -->
   <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
   <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     //io.connect from socket.io API
-    var socket = io.connect('http://localhost:3000')
+    var socket = io.connect('http://localhost:3000') //set up a place for us to connect to, and try to connect.
 
-
-    $('button').click(function(){
-      socket.emit('addRectangle', true)
-    //add rectangle, true on click
-
-    })
 
     socket.on('projectionRectangle', function(data){
       console.log("made it to projection.html" + data); //whenever projection message comes in, do something with it
@@ -41,7 +36,7 @@
     'left' : Math.random() * w,
     'width' : Math.random()* 500,
     'height' : Math.random()* 500,
-    'border' : '1px solid cyan'
+    'border' : '1px solid blue'
     }).appendTo('body') //attaches it to body. (it is created before being placed)
 
     })
