@@ -19,7 +19,7 @@ double-check version with command node -v
 
 cd into working dir
 
-node init
+npm init
 
 --changed "main.js" in package.json to "app.js"
 
