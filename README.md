@@ -110,7 +110,11 @@ Lastly, this div is appended to the 'body' tag in the html.
 Now, if the button is pushed on localhost:3000, then it will show a box on localhost:3000/projection
 
 
-# ADDITIONS
+## ADDITIONS
 ====
 
 -Added projection.js, projection.css, and divided all code into proper locations.
+
+Changed emit.io to send data retrieved from JSON (e) in console log.
+
+# Creaating Persistence

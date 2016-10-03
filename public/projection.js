@@ -1,21 +1,26 @@
   //io.connect from socket.io API
   var socket = io.connect('http://localhost:3000') //set up a place for us to connect to, and try to connect.
 
-
   socket.on('projectionRectangle', function(data){
-    console.log("made it to projection.html" + data); //whenever projection message comes in, do something with it
-
-    var h = window.innerHeight; //learn the size of the screen
-    var w = window.innerWidth;
+    console.log(data); //whenever projection message comes in, do something with it
 
 //make html and css before appending it to screen.
-$('<div></div>').css({ //make a div. Append CSS to it.
+$('<div>👾</div>').css({
   'position':'absolute',
-  'top' :Math.random() * h,
-  'left' : Math.random() * w,
-  'width' : Math.random()* 500,
-  'height' : Math.random()* 500,
-  'border' : '1px solid #11b5f2'
-  }).appendTo('body') //attaches it to body. (it is created before being placed)
+  'top':data.top,
+  'left':data.left,
+}).appendTo('body')
 
   })
+
+socket.on('storedPositionMessage', function(spData){
+  console.log(spData);
+
+  spData.forEach(function(position){
+    $('<div> 💯 </div>').css({
+      'position':'absolute',
+      'top':position.top,
+      'left':position.left,
+    }).appendTo('body')
+  })
+})
