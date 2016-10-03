@@ -108,3 +108,9 @@ Socket.io looks for "projectionRectangle", logs out for debugging, and then star
 Lastly, this div is appended to the 'body' tag in the html.
 
 Now, if the button is pushed on localhost:3000, then it will show a box on localhost:3000/projection
+
+
+# ADDITIONS
+====
+
+-Added projection.js, projection.css, and divided all code into proper locations.

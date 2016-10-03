@@ -3,34 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title> Node js: The Persistent State </title>
-    <style media="screen">
-    body{
-            background-color: #8f1500;
-    }
-    .wrapper {
-      display: flex;
-      flex-direction: row;
-      text-align: center;
-  }
-    .flexbody {
-      display: flex;
-      flex: 1;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-    }
-    button {
-      color: #fff;
-      background-color: #505050;
-      width: 300px;
-      height: 150px;
-      font-size: 40pt;
-    }
-    h1 {
-      font-family: sans-serif;
-      font-size: 20pt;
-    }
-  </style>
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
   </head>
   <body>
     <div class="wrapper">
@@ -38,32 +12,13 @@
         <div class="flexcontent">
           <button type="button" name="button">CLICK</button>
         </div>
-
       </div>
-
     </div>
-
   </body>
 
   <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
   <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+  <script src="index.js" charset="utf-8"></script>
 
-  <script type="text/javascript">
-    //io.connect from socket.io API
-    var socket = io.connect('http://localhost:3000')
-
-    socket.on('connect', function(data){ //on connect, runs this function
-      console.log("connected" + " id# " + socket.id); //socket API call to give user id
-    })
-
-    $('button').click(function(){
-      socket.emit('addRectangle', true)
-    //add rectangle, true on click
-    //send signal to server "addrectangle" socket.io handles the details (party planning)
-
-    })
-
-
-  </script>
 
 </html>

@@ -1,0 +1,14 @@
+
+body {
+  background: linear-gradient(to top,  #0c4655 0%, #050109 100%);
+  overflow: hidden;
+  height: 100vh;
+}
+
+h1{
+  font-family: 'Lato';
+  font-weight: 100;
+  color: #9bf3a9;
+  text-align: center;
+
+}
